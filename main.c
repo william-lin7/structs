@@ -35,5 +35,7 @@ int main(){
   printf("\ntesting free_list\n");
   struct node *k = free_list(p1);
   printf("printing updated list:\n[ ");
+  print_list(k);
   printf(" ]\n\n");
+
 }

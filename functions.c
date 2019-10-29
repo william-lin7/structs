@@ -26,6 +26,8 @@ struct node * free_list(struct node *n){
     n = temp;
   }
   free(temp);
+  temp = NULL;
+  first = NULL;
   return first;
 }
 
@@ -36,10 +38,12 @@ struct node * remove_node(struct node *front, int data){
     if (front->i == data){
       if (previous == front){
         free(front);
+        front = NULL;
       }
       else{
         previous->next = front->next;
         free(front);
+        front = NULL;
       }
       break;
     }
